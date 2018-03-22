@@ -1,0 +1,25 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function qsi_theme($existing, $type, $theme, $path) {
+    $config = \Drupal::config('qsi.settings'); 
+    $facebook = $config->get('facebook');
+    $twitter = $config->get('twitter');
+    $youtube = $config->get('youtube');
+    $instagram = $config->get('instagram');
+    $linkedin = $config->get('linkedin');
+    $icon_size = $config->get('icon_size');
+    return [
+      'qsi' => [
+        'variables' => [
+          'facebook' => $facebook,
+          'twitter' => $twitter,
+          'youtube' => $youtube,
+          'instagram' => $instagram,
+          'linkedin' => $linkedin,
+          'icon_size' => $icon_size
+        ],
+      ],
+    ];
+  }

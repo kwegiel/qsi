@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation to print Icons.
+ *
+ * Available variables:
+ *   - facebook
+ *   - twitter
+ *   - youtube
+ *   - instagram
+ *   - linkedin
+ *   - icon_size
+ *
+ * @see template_preprocess_qsi()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'qsi',
+    icon_size ? icon_size : 'medium'
+  ]
+%}
+<ul{{ attributes.addClass(classes) }}>
+    {% if facebook %}
+        <li>
+            <a href="{{ facebook }}"><i class="fab fa-facebook-square"></i></a>
+        </li>
+    {% endif %}
+    {% if twitter %}
+        <li>
+            <a href="{{ twitter }}"><i class="fab fa-twitter-square"></i></a>
+        </li>
+    {% endif %}
+    {% if youtube %}
+        <li>
+            <a href="{{ youtube }}"><i class="fab fa-youtube-square"></i></a>
+        </li>
+    {% endif %}
+    {% if instagram %}
+        <li>
+            <a href="{{ instagram }}"><i class="fab fa-instagram"></i></a>
+        </li>
+    {% endif %}
+    {% if linkedin %}
+        <li>
+            <a href="{{ linkedin }}"><i class="fab fa-linkedin"></i></a>
+        </li>
+    {% endif %}
+</ul>

@@ -1,0 +1,7 @@
+name: "Quick Social Icons"
+description: "Quick Social Icons Block for Drupal 8"
+package: custom
+configure: qsi.admin_settings
+
+type: module
+core: 8.x

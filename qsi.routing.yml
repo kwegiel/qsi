@@ -1,0 +1,7 @@
+qsi.admin_settings:
+  path: '/admin/config/qsi'
+  defaults:
+    _form: '\Drupal\qsi\Form\ModuleConfigurationForm'
+    _title: 'qsi configuration screen'
+  requirements:
+    _permission: 'administer site configuration'
