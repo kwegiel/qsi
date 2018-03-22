@@ -2,24 +2,30 @@
 /**
  * Implements hook_theme().
  */
-function qsi_theme($existing, $type, $theme, $path) {
-    $config = \Drupal::config('qsi.settings'); 
-    $facebook = $config->get('facebook');
-    $twitter = $config->get('twitter');
-    $youtube = $config->get('youtube');
-    $instagram = $config->get('instagram');
-    $linkedin = $config->get('linkedin');
-    $icon_size = $config->get('icon_size');
+function qsi_theme($existing, $type, $theme, $path) {    
     return [
       'qsi' => [
         'variables' => [
-          'facebook' => $facebook,
-          'twitter' => $twitter,
-          'youtube' => $youtube,
-          'instagram' => $instagram,
-          'linkedin' => $linkedin,
-          'icon_size' => $icon_size
+          'facebook' => NULL,
+          'twitter' => NULL,
+          'youtube' => NULL,
+          'instagram' => NULL,
+          'linkedin' => NULL,
+          'icon_size' => NULL
         ],
       ],
     ];
   }
+
+/**
+ * Implements hook_preprocess().
+ */
+function qsi_preprocess_qsi(&$variables) {
+  $config = \Drupal::config('qsi.settings'); 
+  $variables['facebook'] = $config->get('facebook');
+  $variables['twitter'] = $config->get('twitter');
+  $variables['youtube'] = $config->get('youtube');
+  $variables['instagram'] = $config->get('instagram');
+  $variables['linkedin'] = $config->get('linkedin');
+  $variables['icon_size'] = $config->get('icon_size');  
+}
